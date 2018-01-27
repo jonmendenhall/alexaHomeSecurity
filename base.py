@@ -11,18 +11,21 @@ master = [0xC2] * 5
 
 radio = NRF24(GPIO, spidev.SpiDev())
 radio.begin(0, 17)
+
 radio.setPayloadSize(32)
-radio.setChannel(0x60)
- 
-# radio.setDataRate(NRF24.BR_2MBPS)
+radio.setChannel(0x60) 
+radio.setDataRate(NRF24.BR_1MBPS)
 radio.setPALevel(NRF24.PA_MIN)
+
 radio.setAutoAck(True)
 radio.enableDynamicPayloads()
 radio.enableAckPayload()
  
-radio.openReadingPipe(0, master)
+radio.openReadingPipe(1, master)
 radio.printDetails()
  
+exit()
+
 radio.startListening()
  
 while(1):
