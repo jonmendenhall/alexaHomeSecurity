@@ -37,7 +37,7 @@ while(1):
     string = ""
     for n in receivedMessage:
         # Decode into standard unicode set
-        if (n &gt;= 32 and n &lt;= 126):
+        if (n >= 32 and n <= 126):
             string += chr(n)
     print(string)
     radio.writeAckPayload(1, ackPL, len(ackPL))
