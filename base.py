@@ -26,19 +26,19 @@ radio.printDetails()
 radio.startListening()
  
 while(1):
-    # ackPL = [1]
+    ackPL = [1]
     while not radio.available(0):
         time.sleep(1 / 100)
     receivedMessage = []
     radio.read(receivedMessage, radio.getDynamicPayloadSize())
     print("Received: {}".format(receivedMessage))
  
-    # print("Translating the receivedMessage into unicode characters")
-    # string = ""
-    # for n in receivedMessage:
-    #     # Decode into standard unicode set
-    #     if (n &gt;= 32 and n &lt;= 126):
-    #         string += chr(n)
-    # print(string)
-    # radio.writeAckPayload(1, ackPL, len(ackPL))
-    # print("Loaded payload reply of {}".format(ackPL))
+    print("Translating the receivedMessage into unicode characters")
+    string = ""
+    for n in receivedMessage:
+        # Decode into standard unicode set
+        if (n &gt;= 32 and n &lt;= 126):
+            string += chr(n)
+    print(string)
+    radio.writeAckPayload(1, ackPL, len(ackPL))
+    print("Loaded payload reply of {}".format(ackPL))
