@@ -7,14 +7,14 @@ GPIO.setmode(GPIO.BCM)
  
 # pipes = [[0xe7, 0xe7, 0xe7, 0xe7, 0xe7], [0x00, 0x00, 0xc2, 0x00, 0x01]]
  
-master = 0x0000000001
+master = 0xC2C2C2C2C2
 
 radio = NRF24(GPIO, spidev.SpiDev())
 radio.begin(0, 17)
 # radio.setPayloadSize(32)
-radio.setChannel(0x00)
+radio.setChannel(0x60)
  
-# radio.setDataRate(NRF24.BR_2MBPS)
+radio.setDataRate(NRF24.BR_2MBPS)
 radio.setPALevel(NRF24.PA_MIN)
 radio.setAutoAck(True)
 radio.enableDynamicPayloads()
