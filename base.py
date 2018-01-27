@@ -10,7 +10,7 @@ GPIO.setmode(GPIO.BCM)
 master = 0x0000000001
 
 radio = NRF24(GPIO, spidev.SpiDev())
-radio.begin(10, 6)
+radio.begin(6, 10)
 # radio.setPayloadSize(32)
 radio.setChannel(0x00)
  
