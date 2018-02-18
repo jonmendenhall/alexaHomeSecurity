@@ -1,0 +1,7 @@
+python3 -m pip install pyrebase
+git clone https://github.com/doceme/py-spidev.git
+cd py-spidev
+make
+sudo make install
+cd ..
+rm -rf py-spidev
