@@ -1,0 +1,26 @@
+{
+  "intents": [
+    {
+      "intent": "ArmIntent"
+    },
+    {
+      "intent": "DisarmIntent"
+    },
+    {
+      "intent": "StatusIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Sensor",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Name",
+          "type": "AMAZON.LITERAL"
+        }
+      ],
+      "intent": "RenameIntent"
+    }
+  ]
+}

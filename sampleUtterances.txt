@@ -1,0 +1,21 @@
+ArmIntent to arm my security system
+ArmIntent to activate my security system
+ArmIntent to arm
+ArmIntent to activate
+
+DisarmIntent to disarm my security system
+DisarmIntent to deactivate my security system
+DisarmIntent to disarm
+DisarmIntent to deactivate
+
+StatusIntent what has happened
+StatusIntent has anything happened
+StatusIntent if anything has happened
+StatusIntent the status
+StatusIntent what's going on
+StatusIntent what is the status
+StatusIntent is my security system armed
+
+RenameIntent to name sensor {Sensor} {kitchen sensor|Name}
+RenameIntent to rename sensor {Sensor} to {doorway sensor|Name}
+RenameIntent to rename sensor {Sensor} to be {porch sensor|Name}
