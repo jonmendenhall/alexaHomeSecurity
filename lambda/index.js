@@ -39,18 +39,20 @@ const handlers = {
 			if(data.armed) {
 				speech += "currently armed. "
 
-				// get list of events in reverse order (newest to oldest)
-				var keys = Object.keys(data.events).reverse()
+				// get list of events
+				var keys = Object.keys(data.events)
 				if(keys.length == 0) {
 					// there are no events listed
 					speech += "No activity has been spotted by any of the sensors."
 				} else {
 					speech += "There " + (keys.length > 1 ? "have" : "has") + " been " + keys.length + " activity alerts today. Here are the latest alerts. "					
-					var alerts = keys.length
+					
+					// tell the user a maximum of 5 events
+					var alerts = Math.min(keys.length, 5)
 
 					// loop through all events and say where and when motion was detected
 					for(var i = 0; i < alerts; i++) {
-						var event = data.events[keys[alerts - 1 - i]]
+						var event = data.events[keys[i]]
 						speech += data.sensors[event.sensor] + " detected motion at " + event.time + ".<break time='0.5s'/>"
 					}
 				}
